@@ -25,6 +25,7 @@ public:
 	} bits;
 public:
 	Direction(uint8_t value=0) : byte(value) {}
+	Direction(const Direction &obj) : byte(obj.byte) {}
 
 	//演算関連は全てuint8_tにキャストしてから行う
 	inline operator uint8_t() const { return byte; }
