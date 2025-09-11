@@ -93,6 +93,18 @@ void Maze::loadFromArray(const char asciiData[MAZE_SIZE+1][MAZE_SIZE+1])
 	}
 }
 
+void Maze::saveToArray(char asciiData[MAZE_SIZE+1][MAZE_SIZE+1]) const
+{
+	for (int i=0;i<MAZE_SIZE;i++) {
+		for (int j=0;j<MAZE_SIZE;j++) {
+			uint8_t wall_bin = wall[MAZE_SIZE-1-i][j].byte & 0x0f;
+			if (wall_bin < 10) asciiData[i][j] = '0' + wall_bin;
+			else asciiData[i][j] = 'a' + (wall_bin -10);
+		}
+	}
+	asciiData[MAZE_SIZE][0] = '\0';
+}
+
 void Maze::printWall(const uint8_t value[MAZE_SIZE][MAZE_SIZE]) const
 {
 	bool printValueOn = false;

@@ -191,6 +191,8 @@ public:
 	//file[i][j] = ascii[i][j] = wall[MAZE_SIZE-1-i][j]
 	void loadFromArray(const char asciiData[MAZE_SIZE+1][MAZE_SIZE+1]);
 
+	void saveToArray(char asciiData[MAZE_SIZE+1][MAZE_SIZE+1]) const;
+
 	//コンソール上にそれっぽく整形して迷路を表示する
 	//引数に数字の配列を渡すと各区画にその数字が表示される
 	void printWall(const uint8_t value[MAZE_SIZE][MAZE_SIZE] = nullptr) const;
