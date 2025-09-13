@@ -114,7 +114,7 @@ void test_Agent(const char *filename)
 		usleep(1000000/10);
 	}
 
-	agent.caclRunSequence(true);
+	agent.calcRunSequence(true);
 	bool route[MAZE_SIZE][MAZE_SIZE] = {false};
 	for (auto &index : agent.getShortestPath()) {
 		route[index.y][index.x] = true;
